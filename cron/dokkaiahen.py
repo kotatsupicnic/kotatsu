@@ -42,11 +42,11 @@ def dokkaiahen():
     if new != old[:4]:
         cursor.execute("UPDATE horimiya SET title = " + repr(new))
         li = {'title': newtext, 'link': base_url + link.attr('href')}
-    
+
     elif new2 != old2[:4]:
         cursor.execute("UPDATE horimiya2 SET title = " + repr(new2))
         li = {'title': newtext2, 'link': base_url}
-            
+
     else:
         print('There is no update on {}'.format(base_url))
         li = {}
@@ -62,4 +62,4 @@ if __name__ == '__main__':
     res = dokkaiahen()
     if res:
         message = '読解アヘンに更新があります\n{title}\n{link}'.format(**res)
-        slack.chat.post_message('#try', message, as_user=True)
+        slack.chat.post_message('#general', message, as_user=True)
