@@ -1,1 +1,2 @@
-"env": ["PYTHON_NO_SQLITE3": {"value": "true"}]
+{ "env": ["PYTHON_NO_SQLITE3": {"value": "true"}] }
+
