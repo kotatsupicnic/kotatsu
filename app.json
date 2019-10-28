@@ -1,0 +1,1 @@
+"env": ["PYTHON_NO_SQLITE3": {"value": "true"}]
