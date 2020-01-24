@@ -1,2 +1,5 @@
-{ "env": ["PYTHON_NO_SQLITE3": {"value": "true"}] }
-
+{
+  "name": "kotatsu",
+  "description": "slack bot",
+  "env": ["PYTHON_NO_SQLITE3": {"value": "true"}]
+}
