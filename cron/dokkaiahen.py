@@ -22,7 +22,7 @@ def dokkaiahen():
 
     page2 = pq(url=base_url + 'mat/new.html', encoding='shift_jis') # 更新履歴
     others_pq = page2("td").eq(0)
-    others = others_pq.text()[:4]  # 日付
+    others = others_pq.text().partition('\n')[0]
 
     data_url = urlparse.urlparse(os.environ['DATABASE_URL'])
     conn = psycopg2.connect(
@@ -35,11 +35,11 @@ def dokkaiahen():
 
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM horimiya")
-    horimiya_old = cursor.fetchone()[0]
+    horimiya_old = cursor.fetchone()[0].replace('\\u3000', '　')
     cursor.execute("SELECT * FROM aco")
-    aco_old = cursor.fetchone()[0]
+    aco_old = cursor.fetchone()[0].replace('\\u3000', '　')
     cursor.execute("SELECT * FROM others")
-    others_old = cursor.fetchone()[0]
+    others_old = cursor.fetchone()[0].replace('\\u3000', '　')
 
     flag = True
     new = []
