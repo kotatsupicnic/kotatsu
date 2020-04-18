@@ -18,4 +18,4 @@ if __name__ == '__main__':
     name2 = os.environ.get('NAME2', None)
 
     message = '今日のお風呂掃除は{}です'.format(random.choice([name1, name2]))
-    slack.chat.post_message('#times_mayuko', message, as_user=True)
+    slack.chat.post_message('#general', message, as_user=True)
