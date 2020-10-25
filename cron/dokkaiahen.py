@@ -12,7 +12,7 @@ from slackbot_settings import API_TOKEN
 
 
 def dokkaiahen():
-    base_url = 'http://dka-hero.com/'
+    base_url = 'http://dka-hero.me/'
 
     page = pq(url=base_url + 't_m.html', encoding='shift_jis')  # 左の
     horimiya_pq = page("center").eq(1)("table").eq(1)("tr").eq(1)("td").eq(1)("a")
